@@ -15,4 +15,4 @@
         }
         return $result;
     }
-    var_dump(my_fizz_buzz(100));
+//    var_dump(my_fizz_buzz(100));
