@@ -40,4 +40,4 @@
         return $arrayToSort;
     }
 
-    var_dump(my_array_sort([1, 6, 3, 2, 5], "DESC"));
+//    var_dump(my_array_sort([1, 6, 3, 2, 5], "DESC"));
