@@ -94,7 +94,7 @@ class Room
         return getConnect();
     }
 
-    public function getGrades():array
+    public function getGrades(): ?array
     {
         $conn = $this->getConnect();
         $sql = "SELECT * FROM `grade` WHERE room_id = :id";

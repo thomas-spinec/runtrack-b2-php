@@ -73,7 +73,7 @@ class Floor
         return getConnect();
     }
 
-    public function getRooms():array
+    public function getRooms(): ?array
     {
         $conn = $this->getConnect();
         $sql = "SELECT * FROM `room` WHERE floor_id = :id";
