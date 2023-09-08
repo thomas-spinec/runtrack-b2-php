@@ -15,4 +15,55 @@ class Floor
         $this->name = $name;
         $this->level = $level;
     }
+
+    /**
+     * @return int|null
+     */
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int|null $id
+     */
+    public function setId(?int $id): void
+    {
+        $this->id =
+            $id;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string|null $name
+     */
+    public function setName(?string $name): void
+    {
+        $this->name =
+            $name;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getLevel(): ?int
+    {
+        return $this->level;
+    }
+
+    /**
+     * @param int|null $level
+     */
+    public function setLevel(?int $level): void
+    {
+        $this->level =
+            $level;
+    }
 }
