@@ -1,13 +1,10 @@
 <?php
-    function my_arrayLen(array $arr) : int {
-        $i = 0;
-        while (isset($arr[$i])) {
-            $i++;
-        }
-        return $i;
-    }
     function my_array_sort(array $arrayToSort, string $order) : array {
-        $length = my_arrayLen($arrayToSort);
+        $l = 0;
+        while (isset($arrayToSort[$l])) {
+            $l++;
+        }
+        $length = $l;
         switch ($order){
             case "ASC":
                 // tri a bulle
