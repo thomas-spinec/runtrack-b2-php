@@ -1,5 +1,7 @@
 <?php
 
+require_once "Student.php";
+//require_once "../functions.php";
 class Grade
 {
     private ?int $id;
@@ -19,6 +21,9 @@ public function __construct(
         $this->year = $year;
     }
 
+
+    // ----------------------------------//
+    // -------------- GETTERS & SETTERS -//
     /**
      * @return int|null
      */
@@ -87,5 +92,28 @@ public function __construct(
             $year;
     }
 
+    //-----------------------------------//
+    // -------------- OTHER METHODS -----//
+
+    private function getConnect(): PDO
+    {
+        return getConnect();
+    }
+    public function getStudents(): ?array
+    {
+        $conn = $this->getConnect();
+        $sql = "SELECT * FROM `student` WHERE grade_id = :id";
+        $select = $conn->prepare($sql);
+        $select->execute([':id' => $this->id]);
+        $result = $select->fetchAll(PDO::FETCH_ASSOC);
+        $students = [];
+
+        foreach ($result as $student) {
+            $students[] = new Student($student["id"], $student["grade_id"], $student["email"], $student["fullname"],
+            new DateTime($student["birthdate"]),
+            $student["gender"]);
+        }
+        return $students;
+    }
 
 }
