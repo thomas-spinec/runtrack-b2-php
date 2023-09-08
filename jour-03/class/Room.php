@@ -1,5 +1,6 @@
 <?php
 
+require_once "Grade.php";
 class Room
 {
 
@@ -86,6 +87,25 @@ class Room
     {
         $this->capacity =
             $capacity;
+    }
+
+    private function getConnect(): PDO
+    {
+        return getConnect();
+    }
+
+    public function getGrades():array
+    {
+        $conn = $this->getConnect();
+        $sql = "SELECT * FROM `grade` WHERE room_id = :id";
+        $select = $conn->prepare($sql);
+        $select->execute([':id' => $this->getId()]);
+        $result = $select->fetchAll(PDO::FETCH_ASSOC);
+        $grades = [];
+        foreach ($result as $item) {
+            $grades[] = new Grade($item["id"], $item["room_id"], $item["name"], new DateTime($item["year"]));
+        }
+        return $grades;
     }
 
 }

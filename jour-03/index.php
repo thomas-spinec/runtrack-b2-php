@@ -23,6 +23,14 @@ require_once "./class/Floor.php";
 //var_dump($floor, $floor2);
 
 
-$grade = findOneGrade(2);
-$students = $grade->getStudents();
-var_dump($students);
+//$grade = findOneGrade(2);
+//$students = $grade->getStudents();
+//var_dump($students);
+
+//$room = findOneRoom(4);
+//$grades = $room->getGrades();
+//var_dump($grades);
+
+//$floor = findOneFloor(2);
+//$rooms = $floor->getRooms();
+//var_dump($rooms);
