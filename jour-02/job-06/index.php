@@ -21,6 +21,7 @@ function find_ordered_students(): array
 
     // requête SQL permettant d'obtenir les informations des étudiants pour chaque grade pour les mettres dans un
     // tableau
+    $result = [];
     foreach ($grades as $grade) {
         $sql = "SELECT student.* FROM `student` INNER JOIN `grade` ON student.grade_id = grade.id WHERE grade.name = :grade_name";
         $select = $conn->prepare($sql);
